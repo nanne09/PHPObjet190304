@@ -5,38 +5,38 @@ require_once('autoloader.php');
 
 // On créé une instance de produit
 $product1 = new Product();
-$product1->name='Hamac';
+$product1->setName('Hamac');
 
 // On créé un clone qui fonctionne par copie
 $product2 = clone $product1;
-echo '<p>'.$product2->name.'</p>';
+echo '<p>'.$product2->getName().'</p>';
 // par copie : hamac
 
 // On créé une variable qui fonctionne par référence
 $product3 = $product1;
 
-$product1->name='Parasol';
-echo '<p>'.$product3->name.'</p>';
+$product1->setName('Parasol');
+echo '<p>'.$product3->getName().'</p>';
 // par référence : parasol
-echo '<p>'.$product2->name.'</p>';
+echo '<p>'.$product2->getName().'</p>';
 // par copie : hamac
 
-$product3->name='Brouette';
-echo '<p>'.$product1->name.'</p>';
+$product3->setName('Brouette');
+echo '<p>'.$product1->getName().'</p>';
 // par référence : brouette
 
 
 // TEST : COMPARER DES OBJETS
 // Création de 2 objets
 $produit1= new Product();
-$produit1->name='hamac';
-$produit1->description='pour se reposer';
-$produit1->price=10.99;
+$produit1->setName('hamac');
+$produit1->setDescription('pour se reposer');
+$produit1->setPrice(10.99);
 
 $produit2= new Product();
-$produit2->name='hamac';
-$produit2->description='pour se reposer';
-$produit2->price=10.99;
+$produit2->setName('hamac');
+$produit2->setDescription('pour se reposer');
+$produit2->setPrice(10.99);
 
 // Compare les propriétés des objets et s'ils pointent vers le même objet
 if($produit1 === $produit2){
